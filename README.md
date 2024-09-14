@@ -16,8 +16,8 @@ This is a NestJS application that can be run either locally or using Docker. The
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/echaoeoen/fans-crm-assesment-backend.git
+   cd fans-crm-assesment-backend
    ```
 
 2. **Build and Run the Application**
