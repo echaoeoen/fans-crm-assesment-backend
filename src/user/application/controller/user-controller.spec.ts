@@ -3,6 +3,7 @@ import UserController from './user-controller';
 import UserService from 'src/user/domain/user-service';
 import { GetUserRequest, UserLoginRequest, UserRequest } from './user-request';
 import GetAllUserResponse, { UserLoginResponse } from './user-response';
+import UserModel from 'src/user/infrastructure/repository/user-model';
 
 describe('UserController', () => {
   let userController: UserController;
@@ -63,7 +64,13 @@ describe('UserController', () => {
         email: 'john@example.com',
         password: 'password',
       };
-      const loginResponse: UserLoginResponse = { token: 'valid_token' }; // Mocked response
+      const loginResponse: UserLoginResponse = {
+        token: 'valid_token',
+        userData: {
+          email: 'john@example.com',
+          id: 1,
+        } as UserModel,
+      }; // Mocked response
       jest.spyOn(userService, 'login').mockResolvedValue(loginResponse);
 
       const result = await userController.login(loginRequest);

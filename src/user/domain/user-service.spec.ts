@@ -78,7 +78,13 @@ describe('UserService', () => {
 
       const result = await userService.login(email, password);
 
-      expect(result).toEqual({ token: 'valid_token' });
+      expect(result).toEqual({
+        token: 'valid_token',
+        userData: {
+          email: 'john@example.com',
+          id: 1,
+        },
+      });
       expect(userRepository.findByPassword).toHaveBeenCalledWith(
         email,
         password,
