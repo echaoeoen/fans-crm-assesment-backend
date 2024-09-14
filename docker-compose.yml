@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:9.0.1
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - '3306:3306'
+  app:
+    image: app:latest
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: stage # remove this to run the production build
+    restart: always
+    environment:
+      MYSQL_HOST: db
+    env_file:
+      - ./.env
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    command: yarn start:dev # remove this to run the production build
