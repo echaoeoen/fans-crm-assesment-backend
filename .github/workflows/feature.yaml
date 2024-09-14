@@ -12,17 +12,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Setup Yarn
+        uses: threeal/setup-yarn-action@v2.0.0
+        with:
+          version: '4.5.0'
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '22' # Specify the Node.js version used in your project
           cache: 'yarn'
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Install dependencies
-        run: yarn set version 4
 
       - name: Install dependencies
         run: yarn install
