@@ -35,8 +35,10 @@ This is a NestJS application that can be run either locally or using Docker. The
    Once the application is running, you can access it in your browser at:
 
    ```
-   http://localhost:3000
+   http://localhost:3000/docs
    ```
+4. **Login User**
+   You can use this user: `admin@mail.com` with password: `password123` to test the login endpoint and use the token other endpoints
 
 ### Running Locally (Without Docker)
 
