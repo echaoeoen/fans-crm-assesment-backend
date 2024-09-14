@@ -120,7 +120,3 @@ docker-compose down
 ```
 
 This will stop and remove all the containers defined in the `docker-compose.yml` file.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
